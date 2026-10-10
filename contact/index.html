@@ -13,11 +13,13 @@
       <div class="shell header-inner">
         <span class="site-name">Varun Sinha</span>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="../">Home</a>
-          <a href="../projects/">Projects</a>
-          <a href="../resume/">Resume</a>
-          <a href="../contact/" aria-current="page">Contact</a>
-          <a href="https://github.com/vsinha99" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../resume/">Resume</a></li>
+            <li><a class="current" href="../contact/" aria-current="page">Contact</a></li>
+            <li><a href="https://github.com/vsinha99" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+          </ul>
         </nav>
       </div>
     </header>
@@ -31,18 +33,18 @@
       </div>
 
       <form class="contact-form" action="mailto:varuns0906@gmail.com" method="POST" enctype="text/plain">
-        <div class="field">
-          <label for="email">Your email</label>
+        <label class="field" for="email">
+          <span>Your email</span>
           <input id="email" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div class="field">
-          <label for="subject">Subject</label>
+        </label>
+        <label class="field" for="subject">
+          <span>Subject</span>
           <input id="subject" name="subject" type="text" required>
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
+        </label>
+        <label class="field" for="message">
+          <span>Message</span>
           <textarea id="message" name="message" rows="7" required></textarea>
-        </div>
+        </label>
         <button class="button" type="submit">Open email draft <span aria-hidden="true">→</span></button>
         <p class="form-note">Submitting opens your default email app with the form contents.</p>
       </form>
