@@ -41,7 +41,13 @@ function addNavigation() {
 }
 
 function setColorScheme(colorScheme) {
-  document.documentElement.style.setProperty('color-scheme', colorScheme);
+  const root = document.documentElement;
+  root.style.setProperty('color-scheme', colorScheme);
+  if (colorScheme === 'dark' || colorScheme === 'light') {
+    root.dataset.theme = colorScheme;
+  } else {
+    delete root.dataset.theme;
+  }
 }
 
 function addThemeSelector() {
@@ -50,7 +56,8 @@ function addThemeSelector() {
 
   const label = document.createElement('label');
   label.className = 'color-scheme';
-  label.textContent = 'Theme: ';
+  const labelText = document.createElement('span');
+  labelText.textContent = 'Theme:';
   const select = document.createElement('select');
   select.setAttribute('aria-label', 'Color theme');
   for (const [value, text] of [['light dark', 'Automatic'], ['light', 'Light'], ['dark', 'Dark']]) {
@@ -59,7 +66,7 @@ function addThemeSelector() {
     option.textContent = text;
     select.append(option);
   }
-  label.append(select);
+  label.append(labelText, select);
   headerInner.append(label);
 
   const saved = localStorage.getItem('colorScheme');
