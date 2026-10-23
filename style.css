@@ -87,8 +87,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .site-nav a { display: block; flex: 1; padding: .55rem .65rem .35rem; border-bottom: .4em solid transparent; border-radius: .3rem .3rem 0 0; color: inherit; font-size: .92rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .site-nav a:hover { border-bottom-color: var(--color-accent); background: transparent; color: var(--accent-dark); }
 .site-nav a.current { border-bottom-color: var(--accent); color: var(--accent); }
-.color-scheme { position: absolute; top: 50%; right: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: .45rem; width: 9.5rem; color: var(--muted); font: 500 .76rem/1.5 system-ui; white-space: nowrap; transform: translateY(-50%); }
-.color-scheme select { width: 6.25rem !important; max-width: 6.25rem; min-width: 0; display: inline-block; padding: .38rem .5rem; border: 1px solid var(--line); border-radius: .4rem; background: var(--surface); font: inherit; }
+.color-scheme { position: absolute; top: 50%; right: 0; z-index: 1; display: flex; align-items: center; width: 7rem; color: var(--muted); font: 500 .7rem/1.5 system-ui; white-space: nowrap; transform: translateY(-50%); }
+.color-scheme > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.color-scheme select { width: 7rem !important; max-width: 7rem; min-width: 0; display: inline-block; border: 0; border-bottom: 2px solid var(--line); border-radius: 0; padding: .2rem 0; background: transparent; color: var(--ink); font: inherit; }
+.color-scheme select:hover, .color-scheme select:focus-visible { border-bottom-color: var(--accent); }
 
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3, h4, h5, h6 { line-height: 1.1; text-wrap: balance; }
@@ -211,6 +213,6 @@ h3 { font-size: 1.2rem; }
   .entry-date { text-align: left; }
   .skills-list div { grid-template-columns: 1fr; gap: .1rem; }
   .footer-inner { flex-direction: column; gap: .4rem; }
-  .color-scheme { top: .75rem; left: 1rem; right: auto; flex-direction: row; width: 10.5rem; align-items: center; margin: 0; transform: none; }
+  .color-scheme { top: .75rem; left: 1rem; right: auto; flex-direction: row; width: 7rem; align-items: center; margin: 0; transform: none; }
   .color-scheme select { width: 7rem !important; max-width: 7rem; }
 }
