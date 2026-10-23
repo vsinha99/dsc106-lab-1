@@ -24,117 +24,8 @@
       </header>
 
       <section class="projects-section" aria-labelledby="selected-projects-title">
-        <h2 id="selected-projects-title">Selected projects</h2>
-        <div class="project-list">
-          <article class="project-entry">
-            <div class="project-meta"><span>01 / Robotics</span><time datetime="2026-04">April 2026</time></div>
-            <div class="project-body">
-              <h3>RIIS — Rapid Incident Intelligence System</h3>
-              <p>RIIS is a disaster response system for a ground rover entering collapsed structures. It detects survivors, streams annotated video to a command center, and coordinates triage through an agent workflow.</p>
-              <ul>
-                <li>Built a YOLOv8 pose estimation backend running at about 15 frames per second on CPU, with detection latching and OpenCV skeleton overlays.</li>
-                <li>Used FastAPI to stream video and telemetry. An LLM generates SBAR triage assessments, and ElevenLabs supports multilingual voice contact.</li>
-              </ul>
-              <p class="project-note">2nd place overall at LA Hacks 2026.</p>
-              <p class="project-action"><a class="text-link" href="https://github.com/vsinha99/RIIS" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a></p>
-            </div>
-          </article>
-
-          <article class="project-entry">
-            <div class="project-meta"><span>02 / Machine learning</span><time datetime="2026-07">July 2026</time></div>
-            <div class="project-body">
-              <h3>Finance LLM Router</h3>
-              <p>A routing service that classifies finance tasks and sends each request to the least expensive capable model. It supports GPT-4o, Claude, and local Llama models.</p>
-              <ul>
-                <li>Built a FastAPI and Docker service with Redis and Prometheus monitoring.</li>
-                <li>Implemented a LinUCB contextual bandit in NumPy to learn from quality feedback, plus a provider filter for financial data.</li>
-              </ul>
-              <p class="project-note">Routing lowered inference cost by about 42% compared with sending every request to GPT-4o at similar judged quality.</p>
-              <p class="project-action"><a class="text-link" href="https://github.com/vsinha99/finance_llm_router" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a></p>
-            </div>
-          </article>
-
-          <article class="project-entry">
-            <div class="project-meta"><span>03 / Medical imaging</span><time datetime="2026-04">April 2026</time></div>
-            <div class="project-body">
-              <h3>LungIQ</h3>
-              <p>A clinical decision support prototype that ingests DICOM CT scans, segments tumors, extracts radiomic features, and retrieves similar historical cases using FAISS.</p>
-              <ul>
-                <li>Connected imaging and cohort data in a Python and FastAPI pipeline.</li>
-                <li>Presented the results as grounded, clinician-readable treatment recommendations.</li>
-              </ul>
-              <p class="project-note">Winner of the UCSD DiamondHacks 2026 Healthcare Track.</p>
-              <p class="project-action"><a class="text-link" href="https://github.com/vsinha99/lungiq" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a></p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="projects-section" aria-labelledby="additional-projects-title">
-        <h2 id="additional-projects-title">Additional project slots</h2>
-        <p class="section-description">These are placeholders for future project write-ups.</p>
-        <div class="project-list">
-          <article class="project-entry project-placeholder">
-            <h3>Project 04</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 05 — title to be added</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 06</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 07</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 08</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 09</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 10</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 11</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 12</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 13</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 14</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-          <article class="project-entry project-placeholder">
-            <h3>Project 15</h3>
-            <img src="../images/project-placeholder.svg" alt="" width="320" height="180">
-            <p>Details to be added.</p>
-          </article>
-        </div>
+        <h2 id="selected-projects-title" class="projects-title">Projects</h2>
+        <div class="projects"></div>
       </section>
     </main>
 
@@ -145,5 +36,6 @@
       </div>
     </footer>
     <script type="module" src="../global.js"></script>
+    <script type="module" src="projects.js"></script>
   </body>
 </html>

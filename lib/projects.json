@@ -1,0 +1,92 @@
+[
+  {
+    "title": "RIIS — Rapid Incident Intelligence System",
+    "image": "images/project-placeholder.svg",
+    "description": "RIIS is a disaster response system for a ground rover entering collapsed structures. It detects survivors, streams annotated video to a command center, and coordinates triage through an agent workflow. Built a YOLOv8 pose estimation backend running at about 15 frames per second on CPU, with detection latching and OpenCV skeleton overlays. Used FastAPI to stream video and telemetry. An LLM generates SBAR triage assessments, and ElevenLabs supports multilingual voice contact. 2nd place overall at LA Hacks 2026.",
+    "year": 2026
+  },
+  {
+    "title": "Finance LLM Router",
+    "image": "images/project-placeholder.svg",
+    "description": "A routing service that classifies finance tasks and sends each request to the least expensive capable model. It supports GPT-4o, Claude, and local Llama models. Built a FastAPI and Docker service with Redis and Prometheus monitoring. Implemented a LinUCB contextual bandit in NumPy to learn from quality feedback, plus a provider filter for financial data. Routing lowered inference cost by about 42% compared with sending every request to GPT-4o at similar judged quality.",
+    "year": 2026
+  },
+  {
+    "title": "LungIQ",
+    "image": "images/project-placeholder.svg",
+    "description": "A clinical decision support prototype that ingests DICOM CT scans, segments tumors, extracts radiomic features, and retrieves similar historical cases using FAISS. Connected imaging and cohort data in a Python and FastAPI pipeline. Presented the results as grounded, clinician-readable treatment recommendations. Winner of the UCSD DiamondHacks 2026 Healthcare Track.",
+    "year": 2026
+  },
+  {
+    "title": "Project 04",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2025
+  },
+  {
+    "title": "Project 05",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2025
+  },
+  {
+    "title": "Project 06",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2024
+  },
+  {
+    "title": "Project 07",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2024
+  },
+  {
+    "title": "Project 08",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2025
+  },
+  {
+    "title": "Project 09",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2023
+  },
+  {
+    "title": "Project 10",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2023
+  },
+  {
+    "title": "Project 11",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2024
+  },
+  {
+    "title": "Project 12",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2022
+  },
+  {
+    "title": "Project 13",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2022
+  },
+  {
+    "title": "Project 14",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2021
+  },
+  {
+    "title": "Project 15",
+    "image": "images/project-placeholder.svg",
+    "description": "Placeholder project for a future write-up.",
+    "year": 2021
+  }
+]

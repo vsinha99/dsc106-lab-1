@@ -16,6 +16,63 @@ const BASE_PATH = (location.hostname === 'localhost' || location.hostname === '1
   ? '/'
   : '/dsc106-lab-1/';
 
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Request failed (${response.status} ${response.statusText})`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(`Could not load JSON from ${url}:`, error);
+    return null;
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement) return;
+  containerElement.replaceChildren();
+  if (!Array.isArray(projects) || projects.length === 0) {
+    const message = document.createElement('p');
+    message.className = 'empty-state';
+    message.textContent = 'No projects available.';
+    containerElement.append(message);
+    return;
+  }
+
+  const safeHeading = /^h[1-6]$/.test(headingLevel) ? headingLevel : 'h2';
+  for (const project of projects) {
+    const article = document.createElement('article');
+    article.className = 'project-entry';
+
+    const meta = document.createElement('div');
+    meta.className = 'project-meta';
+    const year = document.createElement('time');
+    year.dateTime = String(project.year);
+    year.textContent = String(project.year);
+    meta.append(year);
+
+    const body = document.createElement('div');
+    body.className = 'project-body';
+    const heading = document.createElement(safeHeading);
+    heading.textContent = project.title || 'Untitled project';
+    const image = document.createElement('img');
+    const imagePath = project.image || 'images/project-placeholder.svg';
+    image.src = imagePath.startsWith('http') ? imagePath : BASE_PATH + imagePath.replace(/^\//, '');
+    image.alt = project.title ? `${project.title} project image` : 'Project image';
+    image.className = 'project-image';
+    const description = document.createElement('p');
+    description.textContent = project.description || 'Details to be added.';
+    body.append(heading, image, description);
+    article.append(meta, body);
+    containerElement.append(article);
+  }
+}
+
+export function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}
+
 function addNavigation() {
   const nav = document.querySelector('.site-nav');
   if (!nav) return;

@@ -99,7 +99,7 @@ h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 750; }
 h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
 h3 { font-size: 1.2rem; }
 .eyebrow { margin-bottom: 1.1rem; color: var(--accent); font-size: .76rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
-.lead { max-width: 64ch; color: var(--muted); font-size: clamp(1.1rem, 1.7vw, 1.3rem); }
+.lead { max-width: 64ch; color: var(--muted); font-size: clamp(1.1rem, 1.7vw, 1.3rem); overflow-wrap: anywhere; word-break: break-word; }
 
 .hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(270px, .8fr); align-items: center; gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(4rem, 9vw, 8rem); }
 .hero h1 { max-width: 12ch; margin-bottom: 1.6rem; }
@@ -128,13 +128,14 @@ h3 { font-size: 1.2rem; }
 .projects-section + .projects-section { margin-top: 4rem; }
 .projects-section > h2 { margin-bottom: 1.5rem; font-size: 1.8rem; }
 .section-description { margin-top: -.8rem; margin-bottom: 1.5rem; color: var(--muted); }
-.project-list { display: grid; min-width: 0; grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); gap: 1rem; }
+.projects { display: grid; min-width: 0; grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); gap: 1rem; }
 .project-entry { display: grid; grid-row: span 2; grid-template-rows: subgrid; gap: 1rem; min-width: 0; max-width: 100%; padding: 1.4rem; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); overflow: hidden; }
 .project-meta { grid-row: 1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem .75rem; color: var(--accent); font-size: .78rem; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }
 .project-meta time { color: var(--muted); font-weight: 500; }
-.project-body { grid-row: 2; display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
-.project-body h3 { margin-bottom: .8rem; font-size: 1.25rem; overflow-wrap: anywhere; }
-.project-body p, .project-body li { color: var(--muted); }
+.project-body { grid-row: 2; display: flex; flex-direction: column; min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.project-body h3 { margin-bottom: .8rem; font-size: 1.25rem; overflow-wrap: anywhere; word-break: break-word; }
+.project-image { width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: .9rem; border-radius: .3rem; }
+.project-body p, .project-body li { color: var(--muted); overflow-wrap: anywhere; word-break: break-word; }
 .project-body ul { padding-left: 1.3rem; }
 .project-body li + li { margin-top: .5rem; }
 .project-body .project-note { color: var(--ink); font-weight: 650; }
@@ -154,6 +155,12 @@ h3 { font-size: 1.2rem; }
 .field textarea { resize: vertical; }
 .contact-form .button { grid-column: 2; justify-self: start; }
 .form-note { grid-column: 2; margin: -.8rem 0 0; color: var(--muted); font-size: .88rem; }
+
+.loading-state, .empty-state { color: var(--muted); }
+.profile-stats dl { margin: 0; }
+#profile-stats dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .45rem 1rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); }
+#profile-stats dt { color: var(--muted); font-size: .82rem; font-weight: 650; }
+#profile-stats dd { margin: 0; color: var(--accent); font-size: 1.8rem; font-weight: 750; }
 
 .resume-main { max-width: 68rem; }
 .resume-main .page-intro { margin-bottom: 2.5rem; }
@@ -192,6 +199,7 @@ h3 { font-size: 1.2rem; }
   .site-nav ul { width: 100%; min-width: 0; }
   .site-nav li { flex: 0 0 20%; }
   .site-nav a { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .projects { grid-template-columns: minmax(0, 1fr); }
   .hero { grid-template-columns: 1fr; }
   .hero { padding-block: 3.5rem; }
   .portrait { max-width: 380px; }
@@ -213,6 +221,7 @@ h3 { font-size: 1.2rem; }
   .entry-date { text-align: left; }
   .skills-list div { grid-template-columns: 1fr; gap: .1rem; }
   .footer-inner { flex-direction: column; gap: .4rem; }
+  #profile-stats dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .color-scheme { top: .75rem; left: 1rem; right: auto; flex-direction: row; width: 7rem; align-items: center; margin: 0; transform: none; }
   .color-scheme select { width: 7rem !important; max-width: 7rem; }
 }
