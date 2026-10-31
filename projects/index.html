@@ -23,9 +23,27 @@
         <p class="lead">Projects in disaster response, language model routing, and medical imaging.</p>
       </header>
 
+      <section class="project-explorer" aria-labelledby="project-years-title">
+        <h2 id="project-years-title">Projects by year</h2>
+        <p class="section-description">Select a year in the chart or legend to filter projects. Counts reflect your search and include placeholder projects.</p>
+        <div class="project-chart">
+          <svg id="projects-pie-plot" viewBox="-50 -50 100 100" role="group" aria-labelledby="pie-title pie-description">
+            <title id="pie-title">Projects by year</title>
+            <desc id="pie-description">Select a slice with a click, Enter, or Space to filter by year. Select it again to remove that filter.</desc>
+          </svg>
+          <ul class="legend" aria-label="Project years"></ul>
+        </div>
+        <p class="chart-empty" hidden>No projects match this search. Clear or change your query to restore the chart.</p>
+        <input class="searchBar" type="search" aria-label="Search projects" placeholder="🔍 Search projects…" aria-controls="project-results">
+        <div class="project-filter-status">
+          <p id="filter-summary" role="status" aria-live="polite"></p>
+          <button class="clear-year" type="button" disabled>Clear year filter</button>
+        </div>
+      </section>
+
       <section class="projects-section" aria-labelledby="selected-projects-title">
         <h2 id="selected-projects-title" class="projects-title">Projects</h2>
-        <div class="projects"></div>
+        <div id="project-results" class="projects"></div>
       </section>
     </main>
 
