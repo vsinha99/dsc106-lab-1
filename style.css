@@ -172,6 +172,38 @@ h3 { font-size: 1.2rem; }
 .clear-year:disabled { opacity: .6; cursor: default; }
 .chart-empty { color: var(--muted); }
 
+/* Lab 6: scope chart, selection, and tooltip styles to the Meta page. */
+.meta-main section + section { margin-top: 3rem; }
+.meta-note { max-width: 80ch; color: var(--muted); }
+.meta-main .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.meta-main .stats > div { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); }
+.meta-main .stats dt { color: var(--muted); font-size: .85rem; }
+.meta-main .stats dd { margin: .5rem 0 0; color: var(--ink); font-size: 1.35rem; font-weight: 650; overflow-wrap: anywhere; }
+#chart { width: 100%; min-width: 0; }
+#commit-scatterplot { display: block; width: 100%; height: auto; overflow: visible; touch-action: none; }
+#commit-scatterplot .x-axis, #commit-scatterplot .y-axis { color: var(--muted); font: 12px system-ui; }
+#commit-scatterplot .axis-label { fill: var(--muted); font: 13px system-ui; }
+#commit-scatterplot .gridlines { color: var(--line); }
+#commit-scatterplot .gridlines .domain { display: none; }
+#commit-scatterplot .dots circle { fill: var(--accent); fill-opacity: .7; stroke: var(--paper); stroke-width: 1; transform-origin: center; transform-box: fill-box; transition: transform 200ms, fill-opacity 200ms; cursor: pointer; }
+#commit-scatterplot .dots circle:hover, #commit-scatterplot .dots circle:focus-visible { transform: scale(1.5); fill-opacity: 1; }
+#commit-scatterplot .dots circle:focus-visible { outline: none; stroke: var(--ink); stroke-width: 2; }
+#commit-scatterplot .dots circle.selected { fill: #c42c82; }
+#commit-scatterplot .brush .selection { fill: var(--accent); fill-opacity: .12; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4 3; }
+.selection-status { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 2rem; }
+#selection-count { margin: 0; font-weight: 650; }
+dl.info { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .4rem .8rem; margin: 0; }
+dl.info dt { color: var(--muted); font-size: .85rem; }
+dl.info dd { margin: 0; overflow-wrap: anywhere; }
+.tooltip { position: fixed; z-index: 20; max-width: min(23rem, calc(100vw - 1.5rem)); padding: 1rem; border: 1px solid var(--control-border); border-radius: .6rem; background: var(--surface); color: var(--ink); box-shadow: 0 .3rem 1.2rem #0003; pointer-events: none; opacity: 1; transition: opacity 150ms; }
+.tooltip[hidden] { display: none; opacity: 0; }
+.tooltip:focus-within { pointer-events: auto; }
+@starting-style { .tooltip:not([hidden]) { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  #commit-scatterplot .dots circle, .tooltip { transition: none; }
+  #commit-scatterplot .dots circle:hover, #commit-scatterplot .dots circle:focus-visible { transform: none; }
+}
+
 .contact-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: clamp(2rem, 8vw, 7rem); align-items: start; min-height: 70vh; }
 .contact-address { margin-top: 2rem; color: var(--muted); }
 .contact-form { display: grid; grid-template-columns: minmax(7rem, 9rem) minmax(0, 1fr); gap: 1.25rem 1rem; padding: 2rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--surface); }

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An analysis of the code and commit history of Varun Sinha's DSC 106 website.">
+    <title>Meta | Varun Sinha</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <span class="site-name">Varun Sinha</span>
+        <nav class="site-nav" aria-label="Main navigation"></nav>
+      </div>
+    </header>
+
+    <main id="main" class="shell page-main meta-main">
+      <header class="page-intro">
+        <p class="eyebrow">Code and history</p>
+        <h1>Meta</h1>
+        <p class="lead">An analysis of this website's source code and the commits responsible for its current lines.</p>
+      </header>
+
+      <section aria-labelledby="summary-title">
+        <h2 id="summary-title">Code summary</h2>
+        <p class="meta-note">This snapshot covers analyzed lines still present in committed source files, including blank lines. It does not include every historical edit or commits whose lines have all been replaced.</p>
+        <div id="stats" aria-live="polite"><p>Loading code analysis…</p></div>
+      </section>
+
+      <section class="commit-section" aria-labelledby="commit-chart-title">
+        <h2 id="commit-chart-title">Commits by time of day</h2>
+        <p id="chart-instructions" class="meta-note">Each dot is an analyzed commit. Larger circles represent more current lines last changed by that commit. Times use your browser's local timezone. Hover or focus a dot for details; drag on the plot to select commits. Press Escape or use Clear selection to reset.</p>
+        <div id="chart" aria-describedby="chart-instructions"></div>
+        <div class="selection-status">
+          <p id="selection-count" role="status" aria-live="polite">No commits selected</p>
+          <button id="clear-selection" class="clear-year" type="button" disabled>Clear selection</button>
+        </div>
+        <h3>Selected lines by language</h3>
+        <p class="meta-note">Counts and percentages describe the analyzed lines attributed to selected commits.</p>
+        <dl id="language-breakdown" class="stats"></dl>
+      </section>
+    </main>
+
+    <dl id="commit-tooltip" class="info tooltip" role="tooltip" hidden>
+      <dt>Commit</dt>
+      <dd><a id="commit-link" target="_blank" rel="noopener noreferrer"></a></dd>
+      <dt>Date</dt><dd id="commit-date"></dd>
+      <dt>Time</dt><dd id="commit-time"></dd>
+      <dt>Author</dt><dd id="commit-author"></dd>
+      <dt>Lines represented</dt><dd id="commit-lines"></dd>
+    </dl>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>Varun Sinha · UC San Diego</p>
+        <a href="mailto:varuns0906@gmail.com">varuns0906@gmail.com</a>
+      </div>
+    </footer>
+    <script type="module" src="../global.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
