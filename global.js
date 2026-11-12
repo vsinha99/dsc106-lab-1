@@ -65,6 +65,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const description = document.createElement('p');
     description.textContent = project.description || 'Details to be added.';
     body.append(heading, image, description);
+    if (project.url) {
+      const action = document.createElement('p');
+      action.className = 'project-action';
+      const link = document.createElement('a');
+      link.className = 'text-link';
+      link.href = project.url;
+      link.textContent = 'View project ↗';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      action.append(link);
+      body.append(action);
+    }
     article.append(meta, body);
     containerElement.append(article);
   }
